@@ -1,8 +1,20 @@
  <?php
 
-  $heading = "Notes";
+  $config = require "config.php";
 
-  // require "functions.php";
+  $db = new Database($config["database"], "root", "akandeseun44");
+
+  $heading = "My Notes";
+
+  // $id = $_GET["id"];
+  // $user_id = $_GET["user_id"];
+
+  $query = "select * from notes where user_id = 1";
+
+
+  $notes = $db->query($query)->fetchAll();
+
+  // dieAndDump($notes);
 
 
   require "./views/notes.view.php";
