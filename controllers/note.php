@@ -8,10 +8,18 @@
 
   $id = $_GET["id"];
 
-  $query = "select * from notes where id = ? and user_id = 1";
+  $query = "select * from notes where id = ?";
 
 
   $note = $db->query($query, [$id])->fetch();
+
+  if (!$note) {
+    abort();
+  }
+
+  if ($note["user_id"] != 1) {
+    abort(403);
+  }
 
 
 
