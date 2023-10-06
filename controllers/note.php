@@ -8,12 +8,12 @@
 
   $id = $_GET["id"];
 
-  $query = "select * from notes where id = ?";
+  $query = "select * from notes where id = ? and user_id = 1";
 
 
   $note = $db->query($query, [$id])->fetch();
 
-  // dieAndDump($note["body"]);
+
 
 
   require "./views/note.view.php";
