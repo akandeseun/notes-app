@@ -12,7 +12,7 @@
   $query = "select * from notes where user_id = 1";
 
 
-  $notes = $db->query($query)->fetchAll();
+  $notes = $db->query($query)->findAll();
 
   // dieAndDump($notes);
 

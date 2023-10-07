@@ -24,6 +24,11 @@ class Database
     return $this;
   }
 
+  public function findAll()
+  {
+    return $this->statement->fetchAll();
+  }
+
   public function find()
   {
     return $this->statement->fetch();
