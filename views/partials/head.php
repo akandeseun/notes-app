@@ -4,7 +4,7 @@
  <head>
    <meta charset="UTF-8">
    <title>Notes App</title>
-   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
  </head>
 
