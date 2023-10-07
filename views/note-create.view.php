@@ -6,7 +6,7 @@
   <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
     <!-- Your content -->
     <!-- <h1>Create a note</h1> -->
-    <form action="/notes" method="POST">
+    <form method="POST">
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
           <h2 class="text-base font-semibold leading-7 text-gray-900">Create a new Note</h2>
