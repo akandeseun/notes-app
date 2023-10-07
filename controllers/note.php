@@ -10,11 +10,7 @@
   $id = $_GET["id"];
   $query = "select * from notes where id = ?";
 
-  $note = $db->query($query, [$id])->fetch();
-
-  if (!$note) {
-    abort();
-  }
+  $note = $db->query($query, [$id])->findOrFail();
 
   if ($note["user_id"] != $currentUserId) {
     abort(Response::FORBIDDEN);
