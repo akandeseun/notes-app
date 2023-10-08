@@ -1,10 +1,11 @@
  <?php
 
-  $config = require "config.php";
-
-  $db = new Database($config["database"], "root", "akandeseun44");
 
   $heading = "Note";
+
+  $config = require "config.php";
+  $db = new Database($config["database"], "root", "akandeseun44");
+
   $currentUserId = 1;
 
   $id = $_GET["id"];

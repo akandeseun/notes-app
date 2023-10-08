@@ -43,8 +43,4 @@ class Database
     }
     return $result;
   }
-
-  // public function create(){
-  //   $result = $this->statement->
-  // }
 }
