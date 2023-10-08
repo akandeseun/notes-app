@@ -23,6 +23,10 @@
                   <p class="text-red-500 text-xs mt-2"> <?= $errors["body"] ?></p>
 
                 <?php endif ?>
+                <?php if (isset($errors["success"])) : ?>
+                  <p class="text-green-500 text-xs mt-2"> <?= $errors["success"] ?></p>
+
+                <?php endif ?>
               </div>
             </div>
 
