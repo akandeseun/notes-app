@@ -1,5 +1,7 @@
 <?php
 
+echo "you dey config page eje";
+
 return [
   "database" => [
     "host" => "localhost",

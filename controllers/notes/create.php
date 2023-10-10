@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // $validator = new Validator();
 
   // validates the body against the validator class
-  if (Validator::string($_POST["body"], 1, 20)) {
+  if (!Validator::string($_POST["body"], 1, 20)) {
     $errors["body"] = "Body should not be empty and contain maximum number of 20 characters";
   }
 
