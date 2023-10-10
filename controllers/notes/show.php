@@ -3,7 +3,7 @@
 
   $heading = "Note";
 
-  $config = require "config.php";
+  $config = require base_path("config.php");
   $db = new Database($config["database"], "root", "akandeseun44");
 
   $currentUserId = 1;
