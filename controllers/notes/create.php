@@ -11,14 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   $errors = [];
 
-  $validator = new Validator();
+  // $validator = new Validator();
 
-  if ($validator->string($_POST["body"])) {
-    $errors["body"] = "A body is required";
-  } elseif (strlen($_POST["body"]) > 20) {
-    $errors["body"] = "body cannot exceed 20 characters";
-  } elseif (strlen($_POST["body"]) < 5) {
-    $errors["body"] = "body cannot exceed 20 characters";
+  // validates the body against the validator class
+  if (Validator::string($_POST["body"], 1, 20)) {
+    $errors["body"] = "Body should not be empty and contain maximum number of 20 characters";
   }
 
 
