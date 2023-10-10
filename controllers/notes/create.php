@@ -32,5 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-
-require "./views/notes/create.view.php";
+view("notes/create.view.php", [
+  "heading" => $heading,
+  "errors" => $errors
+]);

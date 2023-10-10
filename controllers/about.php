@@ -3,5 +3,4 @@
 $heading = "About Us";
 
 
-
-view("about.view.php");
+view("about.view.php", ["heading" => $heading]);

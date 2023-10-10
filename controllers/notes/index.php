@@ -1,6 +1,6 @@
  <?php
 
-  $config = require "config.php";
+  $config = require base_path("config.php");
 
   $db = new Database($config["database"], "root", "akandeseun44");
 
@@ -17,4 +17,7 @@
   // dieAndDump($notes);
 
 
-  require "./views/notes/index.view.php";
+  view("notes/index.view.php", [
+    "heading" => $heading,
+    "notes" => $notes
+  ]);
