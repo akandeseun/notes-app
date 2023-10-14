@@ -2,7 +2,7 @@
 
 // require "functions.php";
 
-$routes = require("routes.php");
+$routes = require base_path("routes.php");
 
 // dieAndDump($_SERVER);
 
