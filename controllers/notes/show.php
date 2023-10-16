@@ -1,10 +1,13 @@
  <?php
 
+  use Core\Database;
+
+
 
   $heading = "Note";
 
   $config = require base_path("config.php");
-  $db = new Database($config["database"], "root", "akandeseun44");
+  $db = new Database($config["database"]);
 
   $currentUserId = 1;
 
