@@ -5,6 +5,7 @@
 
   $heading = "Note";
 
+
   $db = App::resolve(Database::class);
 
   $currentUserId = 1;

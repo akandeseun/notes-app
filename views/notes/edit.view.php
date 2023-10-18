@@ -6,7 +6,9 @@
   <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
     <!-- Your content -->
     <!-- <h1>Create a note</h1> -->
-    <form method="POST" action="/notes">
+    <form method="POST" action="/note">
+      <input type="hidden" name="_method" value="PATCH">
+      <input type="hidden" name="id" value=<?= $note["id"] ?>>
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
           <h2 class="text-base font-semibold leading-7 text-gray-900">Edit existing note</h2>

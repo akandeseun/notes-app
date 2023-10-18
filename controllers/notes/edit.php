@@ -18,8 +18,6 @@ $note = $db->query($query, [$id])->findOrFail();
 
 authorize($note["user_id"] === $currentUserId);
 
-// $note = $db->query()
-
 
 view("notes/edit.view.php", [
   "heading" => $heading,
