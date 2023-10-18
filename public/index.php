@@ -1,5 +1,7 @@
 <?php
 
+use Core\Router;
+
 const BASE_PATH = __DIR__ . "/../";
 // var_dump(BASE_PATH);
 
@@ -11,24 +13,14 @@ spl_autoload_register(function ($class) {
   require base_path($class . ".php");
 });
 
-// require base_path("Database.php");
-// require base_path("Response.php");
-require base_path("Core/" . "router.php");
+// require base_path("Core/" . "router.php");
+
+$router = new Router();
 
 
-// connect to the database, and execute a query
-// $config = require "config.php";
+$routes = require base_path("routes.php");
 
-// $db = new Database($config["database"], "root", "akandeseun44");
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-// $id = $_GET["id"];
-// // dieAndDump($_GET["id"]);
-
-// $query = "select * from posts where id = ?";
-
-// // dieAndDump($query);
-
-// $posts = $db->query($query, [$id])->fetch();
-
-// // dieAndDump($posts);
-// // 
+// routeToController($uri, $routes);
+$router->route($uri, "GET");

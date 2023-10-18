@@ -8,3 +8,8 @@ return [
   "/about" => "controllers/about.php",
   "/contact" => "controllers/contact.php",
 ];
+
+$router->get('/', 'controllers/index.php');
+$router->delete('/', 'controllers/notes/destroy.php');
+// $router->post('/', 'controllers/index.php');
+// $router->get('/', 'controllers/index.php');

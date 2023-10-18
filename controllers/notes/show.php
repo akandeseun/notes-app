@@ -11,15 +11,33 @@
 
   $currentUserId = 1;
 
-  $id = $_GET["id"];
-  $query = "select * from notes where id = ?";
+  if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // dieAndDump($_POST);
 
-  $note = $db->query($query, [$id])->findOrFail();
+    $id = $_POST["id"];
+    $query = "select * from notes where id = ?";
+    $note = $db->query($query, [$id])->findOrFail();
 
-  authorize($note["user_id"] === $currentUserId);
+    authorize($note["user_id"] === $currentUserId);
+    $query = "delete from notes where id = ?";
+
+    $db->query($query, [$id]);
+
+    // sends a raw http header to the browser
+    header("location: /notes");
+    exit();
+  } else {
+
+    $id = $_GET["id"];
+    $query = "select * from notes where id = ?";
+
+    $note = $db->query($query, [$id])->findOrFail();
+
+    authorize($note["user_id"] === $currentUserId);
 
 
-  view("notes/show.view.php", [
-    "heading" => $heading,
-    "note" => $note
-  ]);
+    view("notes/show.view.php", [
+      "heading" => $heading,
+      "note" => $note
+    ]);
+  }
